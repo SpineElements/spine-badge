@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>spine-badge demo</title>
+
+    <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../../paper-styles/typography.html">
+    <link rel="import" href="../../../paper-styles/shadow.html">
+    <link rel="import" href="../../../paper-styles/default-theme.html">
+    <link rel="import" href="../spine-badge.html">
+
+    <custom-style>
+      <style>
+        body {
+          font-family: Roboto, Noto, sans-serif
+        }
+        .paper-badge-like {
+          --spine-badge-size: 20px;
+          background: var(--accent-color);
+          color: white;
+          @apply --shadow-none;
+        }
+      </style>
+    </custom-style>
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+
+      <h3>Plain spine-badge examples.</h3>
+      <demo-snippet>
+        <template>
+          <spine-badge>5</spine-badge>
+          <spine-badge>A longer text</spine-badge>
+        </template>
+      </demo-snippet>
+
+      <h3>Simulating paper-badge.</h3>
+      <demo-snippet>
+        <template>
+          <spine-badge class="paper-badge-like">5</spine-badge>
+          <spine-badge class="paper-badge-like">
+            Note, unlike &lt;paper-badge&gt;, &lt;spine-badge&gt;
+            is always stretched horizontally by its content
+          </spine-badge>
+        </template>
+      </demo-snippet>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "spine-badge",
+  "description": "A small badge-like piece of UI with a customizable content and style.",
+  "main": "spine-badge.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0-rc.2",
+    "paper-styles": "PolymerElements/paper-styles#2.0-preview"
+  },
+  "devDependencies": {
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#2.0-analyzer",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0-rc.2",
+    "webcomponentsjs": "^1.0.0-rc.5",
+    "paper-styles": "2.0-preview",
+    "iron-flex-layout": "2.0-preview",
+    "prism-element": "2.0-preview",
+    "marked-element": "2.0-preview",
+    "iron-location": "2.0-preview"
+  }
+}

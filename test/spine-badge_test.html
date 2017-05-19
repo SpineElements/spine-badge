@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+  ~ Copyright (c) 2000-2017 TeamDev Ltd. All rights reserved.
+  ~ TeamDev PROPRIETARY and CONFIDENTIAL.
+  ~ Use is subject to license terms.
+  -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>spine-badge test</title>
+
+    <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../spine-badge.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        test-fixture[id="defaultStyleTest"] spine-badge {
+          --dark-theme-text-color: rgb(1, 2, 3);
+          --primary-color: rgb(255, 254, 253);
+        }
+
+        test-fixture[id="sizeCustomizationTest"] spine-badge {
+          --spine-badge-size: 40px;
+        }
+      </style>
+    </custom-style>
+
+  </head>
+  <body>
+    <test-fixture id="defaultStyleTest">
+      <template>
+        <spine-badge>5</spine-badge>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="stretchingByContentTest">
+      <template>
+        <spine-badge>A longer text</spine-badge>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="sizeCustomizationTest">
+      <template>
+        <spine-badge>1</spine-badge>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<spine-badge>', function() {
+        const defaultBadgeSize = 21;
+
+        test('default style is correct', function() {
+          const badge = fixture('defaultStyleTest');
+
+          expect(badge.offsetWidth).to.equal(defaultBadgeSize);
+          expect(badge.offsetHeight).to.equal(defaultBadgeSize);
+
+          const style = window.getComputedStyle(badge);
+          const defaultBorderRadius = `${defaultBadgeSize / 2}px`;
+          expect(style.borderTopLeftRadius).to.equal(defaultBorderRadius);
+          expect(style.borderBottomLeftRadius).to.equal(defaultBorderRadius);
+          expect(style.borderTopRightRadius).to.equal(defaultBorderRadius);
+          expect(style.borderBottomRightRadius).to.equal(defaultBorderRadius);
+          expect(style.paddingLeft).to.equal('6px');
+          expect(style.paddingRight).to.equal('6px');
+          expect(style.paddingTop).to.equal('0px');
+          expect(style.paddingBottom).to.equal('0px');
+          expect(style.textAlign).to.equal('center');
+          expect(style.lineHeight).to.equal(`${defaultBadgeSize}px`);
+          expect(style.backgroundColor).to.equal('rgb(1, 2, 3)');
+          expect(style.color).to.equal('rgb(255, 254, 253)');
+          expect(style.fontSize).to.be.equal('11px');
+          expect(style.fontWeight).to.satisfy(w => w === '400' || w === 'normal');
+        });
+
+        test('stretching with the content', function() {
+          const badge = fixture('stretchingByContentTest');
+          expect(badge.offsetWidth).to.satisfy(h => h > defaultBadgeSize);
+          expect(badge.offsetHeight).to.equal(defaultBadgeSize);
+        });
+
+        test('size customization', function() {
+          const badge = fixture('sizeCustomizationTest');
+          const customBadgeSize = 40;
+
+          expect(badge.offsetWidth).to.equal(customBadgeSize);
+          expect(badge.offsetHeight).to.equal(customBadgeSize);
+
+          const style = window.getComputedStyle(badge);
+          const customBadgeRadius = `${customBadgeSize / 2}px`;
+          expect(style.borderTopLeftRadius).to.equal(customBadgeRadius);
+          expect(style.borderBottomLeftRadius).to.equal(customBadgeRadius);
+          expect(style.borderTopRightRadius).to.equal(customBadgeRadius);
+          expect(style.borderBottomRightRadius).to.equal(customBadgeRadius);
+        });
+
+      });
+    </script>
+  </body>
+</html>
