@@ -3,20 +3,16 @@
   "description": "A small badge-like piece of UI with a customizable content and style.",
   "main": "spine-badge.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0-rc.2",
-    "paper-styles": "PolymerElements/paper-styles#2.0-preview"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0"
   },
   "devDependencies": {
-    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#2.0-analyzer",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview"
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#^2.0.0",
+    "web-component-tester": "^6.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0"
   },
   "resolutions": {
-    "polymer": "^2.0.0-rc.2",
-    "webcomponentsjs": "^1.0.0-rc.5",
-    "paper-styles": "2.0-preview",
-    "iron-flex-layout": "2.0-preview",
-    "prism-element": "2.0-preview",
-    "marked-element": "2.0-preview",
-    "iron-location": "2.0-preview"
+    "polymer": "^2.0.0",
+    "webcomponentsjs": "^1.0.0"
   }
 }
