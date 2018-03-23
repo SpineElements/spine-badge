@@ -6,7 +6,7 @@ It is displayed as an inline block alongside its adjacent content.
 Example:
 ```
 <spine-badge>5</spine-badge>
-<spine-badge>A longer text </spine-badge>
+<spine-badge>A longer text</spine-badge>
 ```
 
 ### Styling
