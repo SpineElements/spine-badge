@@ -25,11 +25,11 @@ others to customize its appearance.
 
 Besides, it can be customized with the following custom properties:
 
-Custom property           | Description                                  | Default
---------------------------|----------------------------------------------|----------
-`--spine-badge-size`      | the height and a minimum width for the badge | 21px
-`--dark-theme-text-color` | the default background for the badge         | none
-`--primary-color`         | the default text color for the badge         | `inherit`
+Custom property              | Description                                  | Default
+-----------------------------|----------------------------------------------|----------
+`--spine-badge-size`         | The height and a minimum width for the badge | `21px`
+`--primary-background-color` | The default background for the badge         | `#ffffff`
+`--primary-color`            | The default text color for the badge         | `rgba(0, 0, 0, 0.87)`
 
 
 ### Differences From the `<paper-badge>` Element
@@ -77,8 +77,8 @@ TODO:2017-04-20:dmitry.pikhulya: we might need to make this element compatible w
 
         font-weight: 400;
         font-size: 11px;
-        background: var(--dark-theme-text-color);
-        color: var(--primary-color);
+        background: var(--primary-background-color, #ffffff);
+        color: var(--primary-color, rgba(0, 0, 0, 0.87));
         text-align: center;
         @apply --shadow-elevation-2dp;
       }
