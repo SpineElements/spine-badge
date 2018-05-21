@@ -1,14 +1,14 @@
-<!--
+/*
   ~ Copyright (c) 2000-2017 TeamDev Ltd. All rights reserved.
   ~ TeamDev PROPRIETARY and CONFIDENTIAL.
   ~ Use is subject to license terms.
-  -->
+  */
+import '@polymer/polymer/polymer-legacy.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import '@polymer/paper-styles/shadow.js';
 
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../paper-styles/shadow.html">
-
-<!--
+/**
 `spine-badge` represents a small badge-like piece of UI with a customizable content and style.
 It is displayed as an inline block alongside its adjacent content.
 
@@ -58,10 +58,10 @@ with the `<spine-badge>` element:
 
 TODO:2017-04-20:dmitry.pikhulya: we might need to make this element compatible with paper-badge
                                  (and work as its extended version)
--->
-
-<dom-module id="spine-badge">
-  <template>
+*/
+class SpineBadge extends PolymerElement {
+  static get template() {
+    return html`
     <style>
       :host {
         display: inline-block;
@@ -85,13 +85,10 @@ TODO:2017-04-20:dmitry.pikhulya: we might need to make this element compatible w
     </style>
 
     <slot></slot>
-  </template>
+`;
+  }
 
-  <script>
-    class SpineBadge extends Polymer.Element {
-      static get is() { return 'spine-badge'; }
-    }
+  static get is() { return 'spine-badge'; }
+}
 
-    window.customElements.define(SpineBadge.is, SpineBadge);
-  </script>
-</dom-module>
+window.customElements.define(SpineBadge.is, SpineBadge);
