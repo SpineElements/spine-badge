@@ -13,4 +13,4 @@ before_script:
 - polymer install
 
 script:
-- xvfb-run polymer test
+- xvfb-run polymer test --module-resolution=node --npm

@@ -11,7 +11,7 @@
 
     <title>spine-badge test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <script src="../node_modules/wct-browser-legacy/browser.js"></script>
 
     <script type="module" src="../spine-badge.js"></script>
@@ -28,7 +28,7 @@
 const $_documentContainer = document.createElement('div');
 
 $_documentContainer.innerHTML = `<custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
+      <style is="custom-style">
         test-fixture[id="defaultStyleTest"] spine-badge {
           --primary-background-color: rgb(1, 2, 3);
           --primary-color: rgb(255, 254, 253);
@@ -45,93 +45,76 @@ document.body.appendChild($_documentContainer);
 
   </head>
   <body>
-    <script type="module">
-const $_documentContainer = document.createElement('div');
-
-$_documentContainer.innerHTML = `<test-fixture id="defaultStyleTest">
+    <test-fixture id="defaultStyleTest">
       <template>
         <spine-badge>5</spine-badge>
       </template>
-    </test-fixture>`;
+    </test-fixture>
 
-document.body.appendChild($_documentContainer);
-</script>
-
-    <script type="module">
-const $_documentContainer = document.createElement('div');
-
-$_documentContainer.innerHTML = `<test-fixture id="stretchingByContentTest">
+    <test-fixture id="stretchingByContentTest">
       <template>
         <spine-badge>A longer text</spine-badge>
       </template>
-    </test-fixture>`;
+    </test-fixture>
 
-document.body.appendChild($_documentContainer);
-</script>
-
-    <script type="module">
-const $_documentContainer = document.createElement('div');
-
-$_documentContainer.innerHTML = `<test-fixture id="sizeCustomizationTest">
+    <test-fixture id="sizeCustomizationTest">
       <template>
         <spine-badge>1</spine-badge>
       </template>
-    </test-fixture>`;
-
-document.body.appendChild($_documentContainer);
-</script>
+    </test-fixture>
 
     <script type="module">
-import '../spine-badge.js';
-suite('<spine-badge>', function() {
-  const defaultBadgeSize = 21;
+      import '../spine-badge.js';
 
-  test('default style is correct', function() {
-    const badge = fixture('defaultStyleTest');
+      suite('<spine-badge>', function () {
+        const defaultBadgeSize = 21;
 
-    expect(badge.offsetWidth).to.equal(defaultBadgeSize);
-    expect(badge.offsetHeight).to.equal(defaultBadgeSize);
+        test('default style is correct', function () {
+          const badge = fixture('defaultStyleTest');
 
-    const style = window.getComputedStyle(badge);
-    const defaultBorderRadius = `${defaultBadgeSize / 2}px`;
-    expect(style.borderTopLeftRadius).to.equal(defaultBorderRadius);
-    expect(style.borderBottomLeftRadius).to.equal(defaultBorderRadius);
-    expect(style.borderTopRightRadius).to.equal(defaultBorderRadius);
-    expect(style.borderBottomRightRadius).to.equal(defaultBorderRadius);
-    expect(style.paddingLeft).to.equal('6px');
-    expect(style.paddingRight).to.equal('6px');
-    expect(style.paddingTop).to.equal('0px');
-    expect(style.paddingBottom).to.equal('0px');
-    expect(style.textAlign).to.equal('center');
-    expect(style.lineHeight).to.equal(`${defaultBadgeSize}px`);
-    expect(style.backgroundColor).to.equal('rgb(1, 2, 3)');
-    expect(style.color).to.equal('rgb(255, 254, 253)');
-    expect(style.fontSize).to.be.equal('11px');
-    expect(style.fontWeight).to.satisfy(w => w === '400' || w === 'normal');
-  });
+          expect(badge.offsetWidth).to.equal(defaultBadgeSize);
+          expect(badge.offsetHeight).to.equal(defaultBadgeSize);
 
-  test('stretching with the content', function() {
-    const badge = fixture('stretchingByContentTest');
-    expect(badge.offsetWidth).to.satisfy(h => h > defaultBadgeSize);
-    expect(badge.offsetHeight).to.equal(defaultBadgeSize);
-  });
+          const style = window.getComputedStyle(badge);
+          const defaultBorderRadius = `${defaultBadgeSize / 2}px`;
+          expect(style.borderTopLeftRadius).to.equal(defaultBorderRadius);
+          expect(style.borderBottomLeftRadius).to.equal(defaultBorderRadius);
+          expect(style.borderTopRightRadius).to.equal(defaultBorderRadius);
+          expect(style.borderBottomRightRadius).to.equal(defaultBorderRadius);
+          expect(style.paddingLeft).to.equal('6px');
+          expect(style.paddingRight).to.equal('6px');
+          expect(style.paddingTop).to.equal('0px');
+          expect(style.paddingBottom).to.equal('0px');
+          expect(style.textAlign).to.equal('center');
+          expect(style.lineHeight).to.equal(`${defaultBadgeSize}px`);
+          expect(style.backgroundColor).to.equal('rgb(1, 2, 3)');
+          expect(style.color).to.equal('rgb(255, 254, 253)');
+          expect(style.fontSize).to.be.equal('11px');
+          expect(style.fontWeight).to.satisfy(w => w === '400' || w === 'normal');
+        });
 
-  test('size customization', function() {
-    const badge = fixture('sizeCustomizationTest');
-    const customBadgeSize = 40;
+        test('stretching with the content', function () {
+          const badge = fixture('stretchingByContentTest');
+          expect(badge.offsetWidth).to.satisfy(h => h > defaultBadgeSize);
+          expect(badge.offsetHeight).to.equal(defaultBadgeSize);
+        });
 
-    expect(badge.offsetWidth).to.equal(customBadgeSize);
-    expect(badge.offsetHeight).to.equal(customBadgeSize);
+        test('size customization', function () {
+          const badge = fixture('sizeCustomizationTest');
+          const customBadgeSize = 40;
 
-    const style = window.getComputedStyle(badge);
-    const customBadgeRadius = `${customBadgeSize / 2}px`;
-    expect(style.borderTopLeftRadius).to.equal(customBadgeRadius);
-    expect(style.borderBottomLeftRadius).to.equal(customBadgeRadius);
-    expect(style.borderTopRightRadius).to.equal(customBadgeRadius);
-    expect(style.borderBottomRightRadius).to.equal(customBadgeRadius);
-  });
+          expect(badge.offsetWidth).to.equal(customBadgeSize);
+          expect(badge.offsetHeight).to.equal(customBadgeSize);
 
-});
-</script>
+          const style = window.getComputedStyle(badge);
+          const customBadgeRadius = `${customBadgeSize / 2}px`;
+          expect(style.borderTopLeftRadius).to.equal(customBadgeRadius);
+          expect(style.borderBottomLeftRadius).to.equal(customBadgeRadius);
+          expect(style.borderTopRightRadius).to.equal(customBadgeRadius);
+          expect(style.borderBottomRightRadius).to.equal(customBadgeRadius);
+        });
+
+      });
+    </script>
   </body>
 </html>
