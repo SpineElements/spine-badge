@@ -3,10 +3,9 @@
   ~ TeamDev PROPRIETARY and CONFIDENTIAL.
   ~ Use is subject to license terms.
   */
-import '@polymer/polymer/polymer-legacy.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import '@polymer/paper-styles/shadow.js';
+
+import { html, LitElement } from '@polymer/lit-element/lit-element.js';
 
 /**
 `spine-badge` represents a small badge-like piece of UI with a customizable content and style.
@@ -59,8 +58,8 @@ with the `<spine-badge>` element:
 TODO:2017-04-20:dmitry.pikhulya: we might need to make this element compatible with paper-badge
                                  (and work as its extended version)
 */
-class SpineBadge extends PolymerElement {
-  static get template() {
+class SpineBadge extends LitElement {
+  _render({}) {
     return html`
     <style>
       :host {
