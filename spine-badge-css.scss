@@ -1,0 +1,23 @@
+@import '@material/elevation/mixins';
+
+
+:host {
+  display: inline-block;
+  --spine-badge-size: 21px;
+
+  min-width: var(--spine-badge-size);
+  height: var(--spine-badge-size);
+  border-radius: calc(var(--spine-badge-size) / 2);
+  padding: 0 6px;
+  box-sizing: border-box;
+  line-height: var(--spine-badge-size);
+  white-space: nowrap;
+
+  font-weight: 400;
+  font-size: 11px;
+  background: var(--primary-background-color, #ffffff);
+  color: var(--primary-color, rgba(0, 0, 0, 0.87));
+  text-align: center;
+
+  @include mdc-elevation(2);
+}
