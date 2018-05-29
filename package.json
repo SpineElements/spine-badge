@@ -1,5 +1,5 @@
 {
-  "name": "@polymer/spine-badge",
+  "name": "spine-badge",
   "flat": true,
   "version": "0.3.0",
   "description": "A small badge-like piece of UI with a customizable content and style.",
