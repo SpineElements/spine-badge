@@ -5,17 +5,17 @@
   "description": "A small badge-like piece of UI with a customizable content and style.",
   "main": "spine-badge.html",
   "scripts": {
-    "test": "wct -l chrome"
+    "build-styles": "sass-transpiler spine-badge-css.scss"
   },
   "dependencies": {
-    "@polymer/polymer": "^3.0.0",
-    "@polymer/paper-styles": "^3.0.0-pre.18",
+    "@material/elevation": "^0.35.0",
     "@polymer/lit-element": "^0.5.1"
   },
   "devDependencies": {
+    "sass-transpiler": "@spine-build-tools/sass-transpiler",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^0.0.1-pre.11",
-    "web-component-tester": "^6.6.0"
+    "web-component-tester": "^6.6.0-pre.5"
   }
 }
