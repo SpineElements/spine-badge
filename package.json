@@ -4,8 +4,10 @@
   "version": "0.3.0",
   "description": "A small badge-like piece of UI with a customizable content and style.",
   "main": "spine-badge.html",
+  "repository": "https://github.com/SpineElements/spine-badge.git",
+  "license": "Apache-2.0",
   "scripts": {
-    "build-styles": "sass-transpiler spine-badge-css.scss",
+    "build-styles": "spine-sass-transpiler spine-badge-css.scss",
     "test": "polymer test --module-resolution=node --npm"
   },
   "dependencies": {
@@ -15,8 +17,8 @@
   "devDependencies": {
     "@polymer/iron-component-page": "^3.0.0-pre.19",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
-    "@spine-build-tools/sass-transpiler": "^0.1.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "spine-sass-transpiler": "github:SpineElements/spine-sass-transpiler#implementation",
     "wct-browser-legacy": "^0.0.1-pre.11",
     "web-component-tester": "^6.6.0-pre.5"
   }
