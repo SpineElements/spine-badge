@@ -5,7 +5,8 @@
   "description": "A small badge-like piece of UI with a customizable content and style.",
   "main": "spine-badge.html",
   "scripts": {
-    "build-styles": "sass-transpiler spine-badge-css.scss"
+    "build-styles": "sass-transpiler spine-badge-css.scss",
+    "test": "polymer test --module-resolution=node --npm"
   },
   "dependencies": {
     "@material/elevation": "^0.35.0",
