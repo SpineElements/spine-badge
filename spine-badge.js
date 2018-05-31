@@ -56,9 +56,6 @@ import '@polymer/paper-styles/shadow.js';
  *   the `<paper-badge>` element (see the "Styling" section above).
  *
  * @demo demo/index.html
- *
- * TODO:2017-04-20:dmitry.pikhulya: we might need to make this element compatible with paper-badge
- *                                  (and work as its extended version)
  */
 class SpineBadge extends PolymerElement {
   static get template() {
