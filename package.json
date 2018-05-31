@@ -7,7 +7,7 @@
   "repository": "https://github.com/SpineElements/spine-badge.git",
   "license": "Apache-2.0",
   "scripts": {
-    "build-styles": "spine-sass-transpiler spine-badge-css.scss",
+    "build:styles": "spine-sass-transpiler spine-badge-css.scss",
     "test": "polymer test --module-resolution=node --npm"
   },
   "dependencies": {
