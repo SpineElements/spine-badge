@@ -1,0 +1,16 @@
+{
+  "name": "spine-badge",
+  "flat": true,
+  "version": "0.3.0",
+  "description": "A small badge-like piece of UI with a customizable content and style.",
+  "main": "spine-badge.html",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "@polymer/paper-styles": "^3.0.0-pre.18"
+  },
+  "devDependencies": {
+    "wct-browser-legacy": "^0.0.1-pre.11",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.18"
+  }
+}

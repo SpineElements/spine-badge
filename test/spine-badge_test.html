@@ -11,13 +11,12 @@
 
     <title>spine-badge test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
-
-    <link rel="import" href="../spine-badge.html">
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+    <script type="module" src="../spine-badge.js"></script>
 
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
+      <style is="custom-style">
         test-fixture[id="defaultStyleTest"] spine-badge {
           --primary-background-color: rgb(1, 2, 3);
           --primary-color: rgb(255, 254, 253);
@@ -28,7 +27,6 @@
         }
       </style>
     </custom-style>
-
   </head>
   <body>
     <test-fixture id="defaultStyleTest">
@@ -49,11 +47,11 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('<spine-badge>', function() {
+    <script type="module">
+      suite('<spine-badge>', function () {
         const defaultBadgeSize = 21;
 
-        test('default style is correct', function() {
+        test('default style is correct', function () {
           const badge = fixture('defaultStyleTest');
 
           expect(badge.offsetWidth).to.equal(defaultBadgeSize);
@@ -77,13 +75,13 @@
           expect(style.fontWeight).to.satisfy(w => w === '400' || w === 'normal');
         });
 
-        test('stretching with the content', function() {
+        test('stretching with the content', function () {
           const badge = fixture('stretchingByContentTest');
           expect(badge.offsetWidth).to.satisfy(h => h > defaultBadgeSize);
           expect(badge.offsetHeight).to.equal(defaultBadgeSize);
         });
 
-        test('size customization', function() {
+        test('size customization', function () {
           const badge = fixture('sizeCustomizationTest');
           const customBadgeSize = 40;
 
