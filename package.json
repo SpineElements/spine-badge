@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "build:styles": "spine-sass-transpiler spine-badge-css.scss",
-    "test": "polymer test --module-resolution=node --npm"
+    "test": "polymer test"
   },
   "dependencies": {
     "@material/elevation": "^0.35.0",

@@ -4,5 +4,6 @@
       "polymer-2-hybrid"
     ]
   },
+  "moduleResolution": "node",
   "npm": true
 }
