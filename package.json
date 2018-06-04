@@ -15,6 +15,7 @@
     "@polymer/lit-element": "^0.5.1"
   },
   "devDependencies": {
+    "@material/theme": "^0.35.0",
     "@polymer/iron-component-page": "^3.0.0-pre.19",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",

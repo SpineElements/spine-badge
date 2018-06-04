@@ -5,6 +5,7 @@
  */
 
 @import '@material/elevation/mixins';
+@import '@material/theme/mixins';
 
 
 :host {
@@ -21,9 +22,9 @@
 
   font-weight: 400;
   font-size: 11px;
-  background: var(--primary-background-color, #ffffff);
-  color: var(--primary-color, rgba(0, 0, 0, 0.87));
   text-align: center;
 
+  @include mdc-theme-prop(background-color, background);
+  @include mdc-theme-prop(color, text-primary-on-background);
   @include mdc-elevation(2);
 }

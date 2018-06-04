@@ -25,11 +25,11 @@ import {style} from './spine-badge-css.js';
  *
  * Besides, it can be customized with the following custom properties:
  *
- * Custom property              | Description                                  | Default
- * -----------------------------|----------------------------------------------|----------
- * `--spine-badge-size`         | The height and a minimum width for the badge | `21px`
- * `--primary-background-color` | The default background for the badge         | `#ffffff`
- * `--primary-color`            | The default text color for the badge         | `rgba(0, 0, 0, 0.87)`
+ * Custom property                          | Description                                  | Default
+ * -----------------------------------------|----------------------------------------------|----------
+ * `--spine-badge-size`                     | The height and a minimum width for the badge | `21px`
+ * `--mdc-theme-background`                 | The default background for the badge         | `#ffffff`
+ * `--mdc-theme-text-primary-on-background` | The default text color for the badge         | `rgba(0, 0, 0, 0.87)`
  *
  *
  * ### Differences From the `<paper-badge>` Element
