@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2000-2018 TeamDev. All rights reserved.
+ * TeamDev PROPRIETARY and CONFIDENTIAL.
+ * Use is subject to license terms.
+ */
+
 import {html} from '@polymer/lit-element/lit-element.js';
 export const style = html`<style>:host {
   display: inline-block;
