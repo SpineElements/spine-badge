@@ -4,10 +4,9 @@
  * Use is subject to license terms.
  */
 
-import '@polymer/polymer/polymer-legacy.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import '@polymer/paper-styles/shadow.js';
+import {html, LitElement} from '@polymer/lit-element/lit-element.js';
+
+import {style} from './spine-badge-css.js';
 
 /**
  * `spine-badge` represents a small badge-like piece of UI with a customizable content and style.
@@ -26,11 +25,11 @@ import '@polymer/paper-styles/shadow.js';
  *
  * Besides, it can be customized with the following custom properties:
  *
- * Custom property              | Description                                  | Default
- * -----------------------------|----------------------------------------------|----------
- * `--spine-badge-size`         | The height and a minimum width for the badge | `21px`
- * `--primary-background-color` | The default background for the badge         | `#ffffff`
- * `--primary-color`            | The default text color for the badge         | `rgba(0, 0, 0, 0.87)`
+ * Custom property                          | Description                                  | Default
+ * -----------------------------------------|----------------------------------------------|----------
+ * `--spine-badge-size`                     | The height and a minimum width for the badge | `21px`
+ * `--mdc-theme-background`                 | The default background for the badge         | `#ffffff`
+ * `--mdc-theme-text-primary-on-background` | The default text color for the badge         | `rgba(0, 0, 0, 0.87)`
  *
  *
  * ### Differences From the `<paper-badge>` Element
@@ -57,36 +56,18 @@ import '@polymer/paper-styles/shadow.js';
  *
  * @demo demo/index.html
  */
-class SpineBadge extends PolymerElement {
-  static get template() {
-    return html`
-      <style>
-        :host {
-          display: inline-block;
-          --spine-badge-size: 21px;
-  
-          min-width: var(--spine-badge-size);
-          height: var(--spine-badge-size);
-          border-radius: calc(var(--spine-badge-size) / 2);
-          padding: 0 6px;
-          box-sizing: border-box;
-          line-height: var(--spine-badge-size);
-          white-space: nowrap;
-  
-          font-weight: 400;
-          font-size: 11px;
-          background: var(--primary-background-color, #ffffff);
-          color: var(--primary-color, rgba(0, 0, 0, 0.87));
-          text-align: center;
-          @apply --shadow-elevation-2dp;
-        }
-      </style>
-  
-      <slot></slot>
-    `;
-  }
+class SpineBadge extends LitElement {
+    _render({}) {
+        return html`${this._renderStyle()}<slot></slot>`;
+    }
 
-  static get is() { return 'spine-badge'; }
+    _renderStyle() {
+        return style;
+    }
+
+    static get is() {
+        return 'spine-badge';
+    }
 }
 
 window.customElements.define(SpineBadge.is, SpineBadge);
